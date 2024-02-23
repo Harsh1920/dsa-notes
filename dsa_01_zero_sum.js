@@ -20,3 +20,31 @@ function getSumZeroPair(array) {
 let result = getSumZeroPair([-5, -4, -3, -2, 0, 2, 4, 6, 8]);
 console.log(result);
 
+// with O(n) time complexity 
+
+{
+
+  let nums = [-5, -4, -3, -2, 0, 2, 4, 6, 8];
+  const sum = () =>{
+    let left =0;
+    let right = nums.length -1;
+    while(left<right){
+      const sum = nums[left] + nums[right];
+      if(sum > 0){
+        right--
+      }
+      else if (sum == 0){
+        return [nums[left],nums[right]]
+      }else{
+        left++;
+      }
+    }
+    
+  }
+  
+  
+  const result = sum()
+  console.log("result: ",result)
+  
+}
+

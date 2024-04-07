@@ -56,5 +56,4 @@ checkSort(inputArr);
 
 console.log(newArr);
 
-
 // Helper recursive function....

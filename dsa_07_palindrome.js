@@ -18,14 +18,28 @@ function isPal2(str) {
 
   while (left < right) {
     if (str[left] !== str[right]) return false;
-    left++; 
+    left++;
     right--;
   }
   return true;
 }
 
 const result2 = isPal2(141);
-console.log("Case 2 =>",result2);
-
+console.log("Case 2 =>", result2);
 
 // This works for both number and string...
+
+// Case: 3 => More generic way..
+
+let inputStr = "harsh";
+let revesedStr = "";
+
+function isPalindrom(str) {
+  for (let i = str.length - 1; i >= 0; i--) {
+    revesedStr += str[i];
+  }
+  return inputStr == revesedStr;
+}
+
+const result3 = isPalindrom(inputStr);
+console.log(result3);

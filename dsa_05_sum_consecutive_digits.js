@@ -27,7 +27,6 @@ function findLargest(array, num) {
         // console.log(array[i + j]);
         temp = temp + array[i + j];
         // console.log("Temp value:",temp);
-
       }
       // console.log("Outer Temp Value:", temp);
       if (temp > max) {
@@ -40,3 +39,25 @@ function findLargest(array, num) {
 
 let result = findLargest([1, 2, 3, 4, 3, 5, 4, 6, 7, 8], 4);
 console.log("Sum is:", result);
+
+function maxConsecutiveSum(arr, k) {
+  if (arr.length < k) return null;
+
+  let maxSum = 0;
+
+  for (let i = 0; i < k; i++) {
+    maxSum += arr[i];
+  }
+
+  let windowSum = maxSum;
+
+  for (let i = k; i < arr.length; i++) {
+    windowSum += arr[i] - arr[i - k];
+    maxSum = Math.max(maxSum, windowSum);
+  }
+  return maxSum;
+}
+
+const arr = [7, 1, 3, 2, 3, 6, 4, 6, 1, 1];
+const k = 2;
+console.log(maxConsecutiveSum(arr, k));

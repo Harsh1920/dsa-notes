@@ -26,3 +26,23 @@ function sumZeroArray(array) {
 
 let result = sumZeroArray([-5, -4, -3, -2, 0, 2, 4, 6, 8]);
 console.log(result);
+
+// For unsorted array using Set()
+
+function findPairWithZeroSum(arr) {
+  const seenNumber = new Set();
+
+  for (const num of arr) {
+    const target = -num;
+    if (seenNumber.has(target)) {
+      return [num, target];
+    }
+    seenNumber.add(num);
+  }
+
+  return null;
+}
+
+const arr = [-5, -4, -3, -2, 0, 2, 4, 6, 8];
+const result2 = findPairWithZeroSum(arr);
+console.log(result2);

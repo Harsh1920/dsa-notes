@@ -1,6 +1,7 @@
 // Check if the given strign or number is palindrome.
 
 // Case: 1 => using javascript inbuilt function...
+//   s = s.toLowerCase().replace(/[^a-z0-9]/gi,''); => use this to remove any other char apart from number and string
 
 function isPal(str) {
   let reverse = str.split("").reverse().join("");
